@@ -1,4 +1,9 @@
-truffle compile
-truffle migrate --network development
-truffle test --network development
-truffle console --network development
+truffle compile - Kompiluje smart kontrakt, tworzy ABI itp
+
+truffle migrate --network development - Wrzuca skompilowany kontrakt do sieci (np lokalnego ganache)
+
+truffle test --network development - Odpala testy
+
+truffle console --network development - Odpala konsole i mozna testować
+
+ganache-cli - Włącza ganache (lokalny blockchain)

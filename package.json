@@ -4,6 +4,7 @@
     "@types/chai": "^5.2.3",
     "@types/mocha": "^10.0.10",
     "@types/node": "^24.10.1",
+    "chai": "^6.2.1",
     "truffle": "^5.11.5",
     "ts-node": "^10.9.2",
     "typechain": "^8.3.2",
@@ -11,6 +12,8 @@
   },
   "scripts": {
     "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
-    "postinstall": "npx truffle compile && npm run generate-types"
+    "postinstall": "npx truffle compile && npm run generate-types",
+    "migrate": "truffle migrate --reset --network development",
+    "test": "truffle test --network development"
   }
 }

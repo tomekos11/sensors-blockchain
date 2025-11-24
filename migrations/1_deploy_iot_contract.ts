@@ -1,18 +1,14 @@
 type Network = "development" | "kovan" | "mainnet";
 
-module.exports = (artifacts: Truffle.Artifacts, web3: Web3) => {
-  return async (
-    deployer: Truffle.Deployer,
-    network: Network,
-    accounts: string[]
-  ) => {
-    const IotMeasurementRegistry = artifacts.require('IotMeasurementRegistry');
-    deployer.deploy(IotMeasurementRegistry);
+module.exports = async (deployer: Truffle.Deployer, network: Network, accounts: string[]) => {
+  const IotMeasurementRegistry = artifacts.require('IotMeasurementRegistry');
 
-    const iotMeasurementRegistry = await IotMeasurementRegistry.deployed();
+  // Czekamy, aż deploy się zakończy
+  await deployer.deploy(IotMeasurementRegistry);
 
-    console.log(
-      `Metacoin deployed at ${iotMeasurementRegistry.address} in network: ${network}.`
-    );
-  };
+  const iotMeasurementRegistry = await IotMeasurementRegistry.deployed();
+
+  console.log(
+    `IotMeasurementRegistry deployed at ${iotMeasurementRegistry.address} on network: ${network}.`
+  );
 };
