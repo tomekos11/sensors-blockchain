@@ -1,0 +1,4 @@
+truffle compile
+truffle migrate --network development
+truffle test --network development
+truffle console --network development

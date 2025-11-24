@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@typechain/truffle-v5": "^8.0.7",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.10.1",
+    "truffle": "^5.11.5",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
+    "postinstall": "npx truffle compile && npm run generate-types"
+  }
+}
